@@ -1,11 +1,469 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+const currentYear = 2026;
+const eventDates = "7, 8 y 9 de Septiembre 2026";
+const whatsappBase = "https://wa.me/59891900405";
+const formLink = "#";
+const organizerName = "Carina Pintos";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+
+const packs = [
+  {
+    name: "Semifinalista",
+    subtitle: "Competencia + congreso",
+    items: [
+      "Competencia en 1 categoría",
+      "Asistencia al congreso",
+      "Asistencia a demostraciones",
+      "Coffee break",
+      "Almuerzo",
+      "Gala",
+      "Regalos sponsor",
+      "Sorteos",
+    ],
+  },
+  {
+    name: "Nonstop",
+    subtitle: "Experiencia completa + reconocimiento",
+    items: [
+      "Demostración de técnica",
+      "Asistencia al congreso",
+      "Reconocimiento en escenario",
+      "Coffee break",
+      "Almuerzo",
+      "Gala",
+      "Regalos sponsor",
+      "Sorteos",
+    ],
+  },
+  {
+    name: "Gold",
+    subtitle: "Congreso + demos",
+    items: [
+      "Asistencia al congreso",
+      "Asistencia a demostraciones en vivo",
+      "Coffee break",
+      "Almuerzo",
+      "Gala",
+      "Regalos sponsor",
+      "Sorteos",
+    ],
+  },
+  {
+    name: "Silver",
+    subtitle: "Congreso + demos",
+    items: [
+      "Asistencia al congreso",
+      "Asistencia a demostraciones en vivo",
+      "Sorteos",
+    ],
+  },
+  {
+    name: "Competencia New Talent",
+    subtitle: "Competencia + congreso",
+    items: [
+      "Competencia en 1 categoría",
+      "Reconocimiento en escenario a ganadores",
+      "Vale obsequio al mayor puntaje para acompañar el team a Turquía",
+      "Asistencia al congreso",
+      "Asistencia a demostraciones",
+      "Coffee break",
+      "Almuerzo",
+      "Gala",
+      "Regalos sponsor",
+      "Sorteos",
+    ],
+  },
+];
+
+const waPackLink = (packs) => {
+  const text = `Quiero info de pack: ${packs.name}`;
+  return `${whatsappBase}?text=${encodeURIComponent(text)}`;
+};
 ---
 
-<Layout>
-	<Welcome />
+<Layout lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <title>WULOP Uruguay 2026 • Bosque Arcano</title>
+    <meta
+      name="description"
+      content="WULOP Uruguay 2026: competencia internacional + congreso de micropigmentación. Entradas, packs y cómo inscribirte. Temática: Bosque Arcano."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <!-- Un solo wrapper (acá va TODO el look) -->
+  <div class="font-[Onest] text-slate-50 antialiased min-h-screen bg-[radial-gradient(900px_520px_at_20%_0%,rgba(39,211,197,0.10),transparent_60%),radial-gradient(900px_520px_at_80%_10%,rgba(243,199,106,0.10),transparent_60%),radial-gradient(circle_at_top,#0b151a_0,#03060d_45%,#02040a)]">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-20 border-b border-white/10 backdrop-blur-xl bg-gradient-to-b from-[#02040a]/90 via-[#02040a]/60 to-transparent">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="flex items-center justify-between gap-5 py-4">
+          <div class="flex items-center gap-3">
+            <div class="h-9 w-9 rounded-full grid place-items-center font-extrabold shadow-[0_0_26px_rgba(39,211,197,0.55)] bg-[radial-gradient(circle_at_20%_0,rgba(39,211,197,1)_0,rgba(17,35,35,1)_45%,rgba(8,14,20,1))]">
+              W
+            </div>
+            <div class="text-xs uppercase tracking-[0.22em] text-slate-200/90 font-semibold">
+              WULOP • Uruguay {currentYear} • Bosque Arcano
+            </div>
+          </div>
+
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a class="text-slate-200/80 hover:text-slate-50 transition" href="#evento">WULOP</a>
+            <a class="text-slate-200/80 hover:text-slate-50 transition" href="#entradas">Entradas</a>
+            <a class="text-slate-200/80 hover:text-slate-50 transition" href="#cursos">Cursos</a>
+            <a class="text-slate-200/80 hover:text-slate-50 transition" href="#organizadora">Organizadora</a>
+            <a class="text-slate-200/80 hover:text-slate-50 transition" href="#faq">FAQ</a>
+            <a
+              class="rounded-full px-4 py-2 border border-[#27d3c5]/40 bg-[radial-gradient(circle_at_top_left,rgba(39,211,197,0.25)_0,transparent_60%)] shadow-[0_0_18px_rgba(39,211,197,0.28)] font-semibold"
+              href="#contacto"
+            >
+              Inscribirme
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="pt-16 pb-14">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="grid grid-cols-1 lg:grid-cols-[1.35fr_.95fr] gap-10 items-center">
+            <div>
+              <div class="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-slate-200/90 bg-[radial-gradient(circle_at_left,rgba(39,211,197,0.22),transparent_62%)]">
+                Temática {currentYear} • Bosque Arcano
+              </div>
+
+              <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold uppercase tracking-[0.08em] leading-[1.05]">
+                WULOP
+                <span class="block bg-gradient-to-r from-[#f3c76a] to-[#27d3c5] bg-clip-text text-transparent drop-shadow-[0_0_22px_rgba(39,211,197,0.14)]">
+                  Uruguay {currentYear}
+                </span>
+              </h1>
+
+              <p class="mt-4 text-slate-200/80 leading-relaxed max-w-xl">
+                WULOP no es “un evento más”. Es una competencia internacional y un congreso donde
+                te animás a salir de lo común, medir tu nivel, superar miedos y crecer como profesional
+                en micropigmentación.
+              </p>
+
+              <div class="mt-7 flex flex-wrap gap-3">
+                <a
+                  href="#entradas"
+                  class="rounded-full px-6 py-3 font-bold border border-[#f3c76a]/20 text-[#071015]
+                         bg-[radial-gradient(circle_at_10%_0,rgba(243,199,106,0.95)_0,rgba(39,211,197,0.35)_35%,rgba(8,14,20,1))]
+                         shadow-[0_18px_40px_rgba(39,211,197,0.18)] hover:-translate-y-0.5 transition"
+                >
+                  Ver entradas
+                </a>
+
+                <a
+                  href="#contacto"
+                  class="rounded-full px-6 py-3 font-semibold border border-white/20 bg-[#081016]/60 hover:bg-[#081016]/45 hover:-translate-y-0.5 transition"
+                >
+                  Inscribirme ahora
+                </a>
+              </div>
+
+              <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 rounded-2xl border border-white/10 p-4 bg-[radial-gradient(circle_at_top_left,rgba(10,18,24,.9),rgba(2,4,10,.85))]">
+                <div>
+                  <div class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Fecha</div>
+                  <div class="mt-1 text-slate-100/95">{eventDates}</div>
+                </div>
+                <div>
+                  <div class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Lugar</div>
+                  <div class="mt-1 text-slate-100/95">Montevideo • Uruguay</div>
+                </div>
+                <div>
+                  <div class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Formato</div>
+                  <div class="mt-1 text-slate-100/95">Competencia + Congreso + Demo</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero card -->
+            <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#071015]/60 shadow-[0_18px_45px_rgba(0,0,0,0.55)] p-7">
+              <div class="pointer-events-none absolute -inset-24 opacity-95 blur-xl
+                          bg-[radial-gradient(circle_at_20%_20%,rgba(39,211,197,0.18),transparent_55%),radial-gradient(circle_at_80%_30%,rgba(243,199,106,0.14),transparent_58%)]"></div>
+
+              <div class="relative">
+                <div class="text-xs uppercase tracking-[0.22em] text-slate-200/90 font-semibold">
+                  El Portal
+                </div>
+                <p class="mt-3 text-slate-200/80 leading-relaxed">
+                  Todo parece normal… hasta que cruzás. Acá se compite con respeto, se aprende en serio
+                  y se vuelve con otra confianza.
+                </p>
+
+                <ul class="mt-5 space-y-2 text-slate-100/90">
+                  <li class="flex gap-2"><span class="text-[#27d3c5]">•</span>Valentía: animarte a mostrar tu nivel.</li>
+                  <li class="flex gap-2"><span class="text-[#27d3c5]">•</span>Técnica: feedback real y aprendizaje.</li>
+                  <li class="flex gap-2"><span class="text-[#27d3c5]">•</span>Crecimiento: salir de tu zona de confort.</li>
+                </ul>
+
+                <a
+                  href="#contacto"
+                  class="mt-6 inline-flex w-full justify-center rounded-full px-5 py-3 font-extrabold text-[#071015]
+                         bg-gradient-to-r from-[#27d3c5] to-[#f3c76a]
+                         shadow-[0_18px_35px_rgba(39,211,197,0.22)] hover:-translate-y-0.5 transition"
+                >
+                  Quiero cruzarlo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVENTO -->
+      <section id="evento" class="py-14">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl font-bold">¿Qué es WULOP?</h2>
+            <p class="mt-2 text-slate-200/80 leading-relaxed">
+              World Universal League of Permanent Makeup. Un evento internacional que combina competencia y congreso
+              para elevar el estándar profesional.
+            </p>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="rounded-2xl border border-white/10 bg-[#081016]/60 p-6 shadow-[0_18px_38px_rgba(0,0,0,0.45)]">
+              <h3 class="text-lg font-semibold">Una experiencia que te saca de lo común</h3>
+              <p class="mt-3 text-slate-200/80 leading-relaxed">
+                WULOP está pensado para artistas que quieren más: más técnica, más visión, más comunidad y más seguridad.
+                Competís (si elegís hacerlo), aprendés con demos en vivo y te llevás una experiencia que te ordena y te impulsa.
+              </p>
+              <p class="mt-4 rounded-xl border border-[#f3c76a]/20 bg-[#071015]/60 px-4 py-3 text-slate-100/90">
+                “Salir de lo común implica miedo. Cruzar es crecer.”
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-[#081016]/60 p-6 shadow-[0_18px_38px_rgba(0,0,0,0.45)]">
+              <h3 class="text-lg font-semibold">¿Qué vas a vivir?</h3>
+              <ul class="mt-4 space-y-2 text-slate-200/80">
+                <li class="flex gap-2"><span class="text-[#f3c76a]">▹</span>Competencias con jurado y reconocimiento.</li>
+                <li class="flex gap-2"><span class="text-[#f3c76a]">▹</span>Congreso con contenido técnico y profesional.</li>
+                <li class="flex gap-2"><span class="text-[#f3c76a]">▹</span>Demostraciones en vivo.</li>
+                <li class="flex gap-2"><span class="text-[#f3c76a]">▹</span>Gala + experiencia completa del evento.</li>
+                <li class="flex gap-2"><span class="text-[#f3c76a]">▹</span>Comunidad, networking y motivación real.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ENTRADAS -->
+      <section
+        id="entradas"
+        class="py-14 bg-[radial-gradient(900px_520px_at_50%_0%,rgba(39,211,197,0.08),transparent_55%),radial-gradient(circle_at_bottom,rgba(243,199,106,0.06),transparent_55%)]"
+      >
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl font-bold">Entradas & Packs</h2>
+            <p class="mt-2 text-slate-200/80 leading-relaxed">
+              Elegí tu pack según tu objetivo: competir, demostrar técnica, o vivir el congreso completo. Cupos limitados.
+            </p>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {packs.map((p) => (
+              <article class="rounded-2xl border border-white/10 bg-[#081016]/60 p-6 shadow-[0_18px_38px_rgba(0,0,0,0.45)] flex flex-col">
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <h3 class="text-lg font-bold">{p.name}</h3>
+                    <p class="mt-1 text-xs uppercase tracking-[0.22em] text-[#27d3c5]">
+                      {p.subtitle}
+                    </p>
+                  </div>
+                  <span class="inline-flex rounded-full border border-[#f3c76a]/25 bg-[#071015]/60 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-slate-200/90">
+                    Cupos limitados
+                  </span>
+                </div>
+
+                <ul class="mt-4 space-y-2 text-slate-200/85 text-sm">
+                  {p.items.map((it) => (
+                    <li class="flex gap-2">
+                      <span class="text-[#f3c76a]">▹</span>
+                      <span>{it}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={waPackLink(p.name)}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="mt-5 inline-flex justify-center rounded-full px-4 py-3 font-extrabold text-[#071015]
+                         bg-gradient-to-r from-[#27d3c5] to-[#f3c76a]
+                         shadow-[0_18px_35px_rgba(39,211,197,0.18)] hover:-translate-y-0.5 transition"
+                >
+                  Quiero info de este pack
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CURSOS -->
+      <section id="cursos" class="py-14">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl font-bold">Cursos & Entrenamientos</h2>
+            <p class="mt-2 text-slate-200/80 leading-relaxed">
+              Próximamente.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ORGANIZADORA -->
+      <section
+        id="organizadora"
+        class="py-14 bg-[radial-gradient(900px_520px_at_50%_0%,rgba(39,211,197,0.08),transparent_55%),radial-gradient(circle_at_bottom,rgba(243,199,106,0.06),transparent_55%)]"
+      >
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl font-bold">Sobre la organizadora</h2>
+            <p class="mt-2 text-slate-200/80 leading-relaxed">
+              {organizerName} organiza WULOP Uruguay {currentYear}: una invitación a salir de lo común, elevar tu técnica y animarte a competir.
+            </p>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div class="flex justify-center">
+              <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-2 shadow-[0_18px_38px_rgba(0,0,0,0.45)]">
+                <img
+                  src="/carina.jpg"
+                  alt="Carina Pintos"
+                  class="h-[320px] w-[320px] object-cover rounded-2xl"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-[#081016]/60 p-6 shadow-[0_18px_38px_rgba(0,0,0,0.45)]">
+              <h3 class="text-xl font-bold">{organizerName}</h3>
+              <p class="mt-2 text-xs uppercase tracking-[0.22em] text-[#27d3c5]">
+                Artista internacional de PMU • Master Training
+              </p>
+
+              <ul class="mt-4 space-y-2 text-slate-200/85">
+                <li class="flex gap-2"><span class="text-[#f3c76a]">▹</span>Organizadora de WULOP Uruguay</li>
+                <li class="flex gap-2"><span class="text-[#f3c76a]">▹</span>Organizadora de Copa América Uruguay</li>
+                <li class="flex gap-2"><span class="text-[#f3c76a]">▹</span>Juez de competencia internacional</li>
+              </ul>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a
+                  class="rounded-full px-4 py-2 text-sm border border-white/15 bg-white/5 hover:border-[#27d3c5]/40 transition"
+                  href={whatsappBase}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  WhatsApp
+                </a>
+                <a
+                  class="rounded-full px-4 py-2 text-sm border border-white/15 bg-white/5 hover:border-[#27d3c5]/40 transition"
+                  href="https://www.instagram.com/carinapintospmu/"
+                  target="_blank"
+                >
+                  Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="py-14">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl font-bold">Preguntas frecuentes</h2>
+            <p class="mt-2 text-slate-200/80 leading-relaxed">Respuestas cortas y claras para que decidan rápido.</p>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="rounded-2xl border border-white/10 bg-[#081016]/60 p-6">
+              <h3 class="font-semibold">¿Cómo me inscribo?</h3>
+              <p class="mt-2 text-slate-200/80">
+                Escribinos por WhatsApp. Te pasamos info del pack, medios de pago y pasos para confirmar.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-[#081016]/60 p-6">
+              <h3 class="font-semibold">¿Puedo ir sin competir?</h3>
+              <p class="mt-2 text-slate-200/80">
+                Sí. Tenés packs de congreso/demos para aprender y vivir el evento sin competir.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-[#081016]/60 p-6">
+              <h3 class="font-semibold">¿Necesito experiencia para competir?</h3>
+              <p class="mt-2 text-slate-200/80">
+                No hace falta “ser perfecta”. Si te da miedo, probablemente es el paso correcto.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-[#081016]/60 p-6">
+              <h3 class="font-semibold">¿Cupos?</h3>
+              <p class="mt-2 text-slate-200/80">
+                Limitados. Recomendamos reservar con anticipación.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section id="contacto" class="py-14 border-y border-white/10 bg-[radial-gradient(circle_at_top,#111827_0,#02040a_55%,#02040a)]">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div>
+              <h2 class="text-2xl font-bold">¿Te animás a cruzar el Portal?</h2>
+              <p class="mt-2 text-slate-200/80 max-w-xl leading-relaxed">
+                Pedí la info completa de entradas y te guiamos para elegir el pack ideal.
+                WULOP Uruguay {currentYear} • {eventDates}.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <a
+                href={whatsappBase}
+                target="_blank"
+                rel="noreferrer"
+                class="rounded-full px-6 py-3 font-extrabold text-[#071015] bg-gradient-to-r from-[#27d3c5] to-[#f3c76a] shadow-[0_18px_35px_rgba(39,211,197,0.22)] hover:-translate-y-0.5 transition"
+              >
+                WhatsApp
+              </a>
+
+              <a
+                href={formLink}
+                class="rounded-full px-6 py-3 font-semibold border border-white/20 bg-[#081016]/55 hover:bg-[#081016]/40 hover:-translate-y-0.5 transition"
+              >
+                Formulario
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-8 bg-[#02040a] border-t border-white/10">
+      <div class="mx-auto max-w-6xl px-6 text-sm text-slate-400">
+        <p>© {currentYear} WULOP Uruguay • Bosque Arcano.</p>
+        <p class="mt-1 text-xs text-slate-500">Sitio informativo. Detalles y agenda pueden actualizarse.</p>
+      </div>
+    </footer>
+  </div>
 </Layout>
