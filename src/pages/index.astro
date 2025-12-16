@@ -76,8 +76,8 @@ const packs = [
   },
 ];
 
-const waPackLink = (packs) => {
-  const text = `Quiero info de pack: ${packs.name}`;
+const waPackLink = (pack) => {
+  const text = `Quiero info de pack: ${pack}`;
   return `${whatsappBase}?text=${encodeURIComponent(text)}`;
 };
 ---
