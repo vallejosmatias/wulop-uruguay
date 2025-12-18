@@ -316,15 +316,111 @@ const waPackLink = (pack) => {
 
       <!-- CURSOS -->
       <section id="cursos" class="py-14">
-        <div class="mx-auto max-w-6xl px-6">
-          <div class="max-w-2xl">
-            <h2 class="text-2xl font-bold">Cursos & Entrenamientos</h2>
-            <p class="mt-2 text-slate-200/80 leading-relaxed">
-              Próximamente.
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="max-w-2xl">
+      <h2 class="text-2xl font-bold">Cursos & Entrenamientos</h2>
+      <p class="mt-2 text-slate-200/80 leading-relaxed">
+        Entrenamientos oficiales para llegar con más confianza y técnica.
+      </p>
+    </div>
+
+    <!-- Cursos más grandes (2 columnas) -->
+    <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- CURSO 1: Glow Lips -->
+      <article class="rounded-3xl border border-white/10 bg-[#081016]/60 p-7 shadow-[0_18px_38px_rgba(0,0,0,0.45)]">
+        <img
+          src="/glow.jpeg"
+          alt="Curso Glow Lips"
+          class="h-56 w-full object-cover object-[50%_20%] rounded-2xl border border-white/10"
+          loading="lazy"
+        />
+
+        <div class="mt-5 flex items-start justify-between gap-4">
+          <div>
+            <h3 class="text-xl font-extrabold">Glow Lips</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.22em] text-[#f3c76a]">
+              Dictado por Carina Pintos
             </p>
           </div>
+
+          <span class="shrink-0 inline-flex rounded-full border border-[#f3c76a]/25 bg-[#071015]/60 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-slate-200/90">
+            Cupos limitados
+          </span>
         </div>
-      </section>
+
+        <p class="mt-4 text-slate-200/80 leading-relaxed">
+          Técnica Glow Lips enfocada en naturalidad, color y resultados armónicos.
+          Ideal para perfeccionar y elevar tu nivel profesional.
+        </p>
+
+        <div class="mt-4 rounded-2xl border border-white/10 bg-[#071015]/50 p-4 text-slate-100/90">
+          <p class="text-sm">
+            📅 <strong>24, 25 de enero y 8 de febrero 2026</strong><br />
+            📍 Montevideo · Uruguay
+          </p>
+        </div>
+
+        <a
+          href={`${whatsappBase}?text=${encodeURIComponent("Quiero saber más sobre el curso Glow Lips (Carina Pintos)")}`}
+          target="_blank"
+          rel="noreferrer"
+          class="mt-6 inline-flex w-full justify-center rounded-full px-6 py-3 font-extrabold text-[#071015]
+                 bg-gradient-to-r from-[#27d3c5] to-[#f3c76a]
+                 shadow-[0_18px_35px_rgba(39,211,197,0.22)] hover:-translate-y-0.5 transition"
+        >
+          Saber más
+        </a>
+      </article>
+
+      <!-- CURSO 2: Lash Lifting -->
+      <article class="rounded-3xl border border-white/10 bg-[#081016]/60 p-7 shadow-[0_18px_38px_rgba(0,0,0,0.45)]">
+        <img
+          src="/lash.jpeg"
+          alt="Curso Lash Lifting Inicial y Avanzado"
+          class="h-56 w-full object-cover object-[50%_16%] rounded-2xl border border-white/10"
+          loading="lazy"
+        />
+
+        <div class="mt-5 flex items-start justify-between gap-4">
+          <div>
+            <h3 class="text-xl font-extrabold">Lash Lifting</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.22em] text-[#27d3c5]">
+              Inicial & Avanzado · Sofía Gularte
+            </p>
+          </div>
+
+          <span class="shrink-0 inline-flex rounded-full border border-[#27d3c5]/25 bg-[#071015]/60 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-slate-200/90">
+            Próximamente
+          </span>
+        </div>
+
+        <p class="mt-4 text-slate-200/80 leading-relaxed">
+          Formación completa en lash lifting: desde bases sólidas hasta perfeccionamiento técnico,
+          correcciones y resultados consistentes.
+        </p>
+
+        <div class="mt-4 rounded-2xl border border-white/10 bg-[#071015]/50 p-4 text-slate-100/90">
+          <p class="text-sm">
+            📅 <strong>Fecha a confirmar</strong><br />
+            📍 Montevideo · Uruguay
+          </p>
+        </div>
+
+        <a
+          href={`${whatsappBase}?text=${encodeURIComponent("Quiero saber más sobre el curso Lash Lifting (Sofía Gularte)")}`}
+          target="_blank"
+          rel="noreferrer"
+          class="mt-6 inline-flex w-full justify-center rounded-full px-6 py-3 font-extrabold text-[#071015]
+                 bg-gradient-to-r from-[#27d3c5] to-[#f3c76a]
+                 shadow-[0_18px_35px_rgba(39,211,197,0.22)] hover:-translate-y-0.5 transition"
+        >
+          Saber más
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
 
       <!-- ORGANIZADORA -->
       <section
@@ -362,28 +458,69 @@ const waPackLink = (pack) => {
                 <li class="flex gap-2"><span class="text-[#f3c76a]">▹</span>Organizadora de Copa América Uruguay</li>
                 <li class="flex gap-2"><span class="text-[#f3c76a]">▹</span>Juez de competencia internacional</li>
               </ul>
-
-              <div class="mt-6 flex flex-wrap gap-3">
-                <a
-                  class="rounded-full px-4 py-2 text-sm border border-white/15 bg-white/5 hover:border-[#27d3c5]/40 transition"
-                  href={whatsappBase}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  WhatsApp
-                </a>
-                <a
-                  class="rounded-full px-4 py-2 text-sm border border-white/15 bg-white/5 hover:border-[#27d3c5]/40 transition"
-                  href="https://www.instagram.com/carinapintospmu/"
-                  target="_blank"
-                >
-                  Instagram
-                </a>
-              </div>
             </div>
           </div>
         </div>
       </section>
+
+     <!-- TEAM LEADER -->
+<section
+  id="team-leader"
+  class="py-14 bg-[radial-gradient(900px_520px_at_50%_0%,rgba(39,211,197,0.08),transparent_55%),radial-gradient(circle_at_bottom,rgba(243,199,106,0.06),transparent_55%)]"
+>
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="max-w-2xl">
+      <h2 class="text-2xl font-bold">Sobre la Team Leader</h2>
+      <p class="mt-2 text-slate-200/80 leading-relaxed">
+        Acompañando y guiando a los competidores de WULOP Uruguay {currentYear},
+        con experiencia, técnica y formación constante.
+      </p>
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <!-- FOTO -->
+      <div class="flex justify-center">
+        <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-2 shadow-[0_18px_38px_rgba(0,0,0,0.45)]">
+          <img
+            src="/sofia.jpeg"
+            alt="Sofía Gularte"
+            class="h-[320px] w-[320px] object-cover object-[50%_30%] rounded-2xl"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- INFO -->
+      <div class="rounded-2xl border border-white/10 bg-[#081016]/60 p-6 shadow-[0_18px_38px_rgba(0,0,0,0.45)]">
+        <h3 class="text-xl font-bold">Sofía Gularte</h3>
+        <p class="mt-2 text-xs uppercase tracking-[0.22em] text-[#27d3c5]">
+          Team Leader • Micropigmentadora & Lash Trainer
+        </p>
+
+        <ul class="mt-4 space-y-2 text-slate-200/85">
+          <li class="flex gap-2">
+            <span class="text-[#f3c76a]">▹</span>
+            Inicios en belleza desde 2016 (maquillaje profesional)
+          </li>
+          <li class="flex gap-2">
+            <span class="text-[#f3c76a]">▹</span>
+            Especialista en extensiones, lash lifting y micropigmentación
+          </li>
+          <li class="flex gap-2">
+            <span class="text-[#f3c76a]">▹</span>
+            Lash Trainer desde 2023
+          </li>
+          <li class="flex gap-2">
+            <span class="text-[#f3c76a]">▹</span>
+            Formación continua a nivel nacional e internacional
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       <!-- FAQ -->
       <section id="faq" class="py-14">
